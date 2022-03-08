@@ -36,7 +36,6 @@ public class Main {
 
             decimal+=Integer.parseInt(aux)*Math.pow(2,binary.length()-1-i);    
         }
-
         
         
         return decimal;
