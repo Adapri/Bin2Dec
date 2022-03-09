@@ -21,7 +21,8 @@ public class Window extends JFrame{
         JPanel panel2= new JPanel();
         JPanel panel3= new JPanel();
  
-        panel1.add(new JLabel("BINARY2DECIMAL CONVERTER"));
+        JLabel title = new JLabel("BINARY2DECIMAL CONVERTER");
+        panel1.add(title);
  
         panel2.setLayout (new GridBagLayout());
         

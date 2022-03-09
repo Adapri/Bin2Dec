@@ -14,13 +14,16 @@ public class Main {
             {
                 switch(converter.parserBinary(input))
                 {
-                    case -1: System.out.println("It is not a binary number"); break;
+                    case -1: window.setOutput("It is not a binary number"); break;
         
-                    case 0: System.out.println("Invalid length"); break;
+                    case 0: window.setOutput("Invalid length"); break;
         
                     case 1: window.setOutput(String.valueOf(converter.Bic2Dec(input)));
                 }
             }
+
+            else
+                window.setOutput(""); 
             
             input=window.getInput();
        }
