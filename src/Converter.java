@@ -1,6 +1,6 @@
 public class Converter{
 
-    public static int parserBinary(String number)
+    public int parserBinary(String number)
     {
         
         if(number.isEmpty())
@@ -19,7 +19,7 @@ public class Converter{
         return 1;
     }
 
-    public static int Bic2Dec(String binary)
+    public int Bic2Dec(String binary)
     {
         int decimal=0;
         String aux;
