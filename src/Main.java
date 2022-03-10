@@ -9,21 +9,21 @@ public class Main {
         String input=window.getInput();
         while(true)
         {
-            if(!input.equals(""))
+            if(!input.equals("")) //Cheak input is not empty
             {
-                if(window.getMode()==0)
+                if(window.getMode()==0) //Mode Bin2Dec
                 {
-                    if(converter.parserBinary(input)==0)
+                    if(!converter.parserBinary(input))
                         window.setOutput("It is not a binary number");
 
                     else
                         window.setOutput(String.valueOf(converter.Bic2Dec(input)));
                 }
 
-                else
+                else //Mode Dec2Bin
                 {
 
-                    if(converter.parserDecimal(input)==0)
+                    if(!converter.parserDecimal(input))
                         window.setOutput("It is not a decimal number");
 
                     else

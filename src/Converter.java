@@ -1,6 +1,12 @@
 public class Converter{
 
-    public int parserBinary(String number)
+    
+    /** 
+     * @brief Checks if a string represents a binary number
+     * @param number Input string
+     * @return boolean Returns true if the input is a binary number 
+     */
+    public boolean parserBinary(String number)
     {
 
         String aux;
@@ -9,14 +15,20 @@ public class Converter{
             aux=Character.toString(number.charAt(i));
 
             if(!aux.equals("0") && !aux.equals("1"))
-                return 0;
+                return false;
             
         }
         
-        return 1;
+        return true;
     }
 
-    public int parserDecimal(String number)
+    
+    /** 
+     * @brief Checks if a string represents a decimal number
+     * @param number Input string
+     * @return boolean Returns true if the input is a decimal number 
+     */
+    public boolean parserDecimal(String number)
     {
         String aux;
         for(int i=0;i<number.length();i++)
@@ -24,12 +36,18 @@ public class Converter{
             aux=Character.toString(number.charAt(i));
 
             if(!aux.equals("0") && !aux.equals("1") && !aux.equals("2") && !aux.equals("3") && !aux.equals("4") && !aux.equals("5") && !aux.equals("6") && !aux.equals("7") && !aux.equals("8") && !aux.equals("9"))
-                return 0;
+                return false;
         }
         
-        return 1;
+        return true;
     }
 
+    
+    /** 
+     * @brief Convert a binary number to decimal
+     * @param binary Input binary number
+     * @return int Binary number in decimal form
+     */
     public int Bic2Dec(String binary)
     {
         int decimal=0;
@@ -45,6 +63,12 @@ public class Converter{
         return decimal;
     }
 
+    
+    /** 
+     * @brief Convert a decimal number to binary
+     * @param decimal Input decimal number
+     * @return String Decimal number in binary form
+     */
     public String Dec2Bin(String decimal)
     {
         int aux= Integer.parseInt(decimal);
@@ -55,29 +79,29 @@ public class Converter{
             return "1";
         }
 
-        int res=aux%2;
-        aux=aux/2;
-        binary1=binary1+String.valueOf(res);
-        
-        while(aux!=1 && aux!=0)
+        else
         {
-            res=aux%2;
+            int res=aux%2;
             aux=aux/2;
             binary1=binary1+String.valueOf(res);
+            
+            while(aux!=1 && aux!=0)
+            {
+                res=aux%2;
+                aux=aux/2;
+                binary1=binary1+String.valueOf(res);
+            }
+
+            binary1=binary1+"1";
+            
+            String binary2="";
+
+            for(int i=binary1.length()-1;i>=0;i--)
+            {
+                binary2+=binary1.charAt(i);
+            }
+            
+            return binary2;
         }
-
-        binary1=binary1+"1";
-        
-        String binary2="";
-
-        for(int i=binary1.length()-1;i>=0;i--)
-        {
-            binary2+=binary1.charAt(i);
-        }
-        
-        return binary2;
-    }
-
-
-
+    }     
 }
