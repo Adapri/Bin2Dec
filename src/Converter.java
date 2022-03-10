@@ -25,7 +25,6 @@ public class Converter{
 
             if(!aux.equals("0") && !aux.equals("1") && !aux.equals("2") && !aux.equals("3") && !aux.equals("4") && !aux.equals("5") && !aux.equals("6") && !aux.equals("7") && !aux.equals("8") && !aux.equals("9"))
                 return 0;
-            
         }
         
         return 1;
@@ -51,10 +50,16 @@ public class Converter{
         int aux= Integer.parseInt(decimal);
         String binary1="";
 
+        if(aux==1)
+        {
+            return "1";
+        }
+
         int res=aux%2;
         aux=aux/2;
         binary1=binary1+String.valueOf(res);
-        while(aux!=1)
+        
+        while(aux!=1 && aux!=0)
         {
             res=aux%2;
             aux=aux/2;

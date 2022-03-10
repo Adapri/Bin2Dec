@@ -22,11 +22,14 @@ public class Main {
 
                 else
                 {
+
                     if(converter.parserDecimal(input)==0)
                         window.setOutput("It is not a decimal number");
 
                     else
+                    {
                         window.setOutput(converter.Dec2Bin(input));
+                    }
                 }
             }
 
